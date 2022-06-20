@@ -43,14 +43,14 @@ def pregunta_02():
     n_iterations = 1000
 
     # Define the initial parameter `params` as an array of size 3 with zeros
-    params = np.zeros(3)
+    params = np.zeros(x_poly.shape[1])
     for i in range(n_iterations):
 
         # Compute the forecast with the current parameters
         y_pred = np.dot(x_poly, params)
 
         # Calcule el error
-        error = y - y_pred
+        error = y_pred - y
 
         # Calcule el gradiente
         gradient = np.dot(x_poly.T, error)
